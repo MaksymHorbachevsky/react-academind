@@ -42,21 +42,25 @@ function App() {
           <h2>Examples</h2>
           <menu>
             <TabButton
+              isActive={selectedButton === "components"}
               onSelect={() => handleSelect("components")}
             >
               Components
             </TabButton>
             <TabButton
+              isActive={selectedButton === "jsx"}
               onSelect={() => handleSelect("jsx")}
             >
               JSX
             </TabButton>
             <TabButton
+              isActive={selectedButton === "props"}
               onSelect={() => handleSelect("props")}
             >
               Props
             </TabButton>
             <TabButton
+              isActive={selectedButton === "state"}
               onSelect={() => handleSelect("state")}
             >
               State
