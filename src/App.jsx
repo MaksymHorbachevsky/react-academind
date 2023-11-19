@@ -1,12 +1,13 @@
 import reactImg from "./assets/react-core-concepts.png";
 import Header from "./components/Header/Header";
 import {CORE_CONCEPTS} from "./data";
+import {EXAMPLES} from "./data";
 import CoreConcept from "./components/CoreConcept/CoreConcept";
 import TabButton from "./components/TabButton/TabButton";
 import {useState} from "react";
 
 function App() {
-  const [selectedButton, setSelectedButton] = useState("Please click");
+  const [selectedButton, setSelectedButton] = useState();
 
   function handleSelect(selectedButton) {
     setSelectedButton(selectedButton)
@@ -61,7 +62,18 @@ function App() {
               State
             </TabButton>
           </menu>
-          {selectedButton}
+          {!selectedButton && <p>Select a tab to see the example</p>}
+          {selectedButton &&
+            <div id="tab-content">
+              <h3>{EXAMPLES[selectedButton].title}</h3>
+              <p>{EXAMPLES[selectedButton].description}</p>
+              <pre>
+              <code>
+                {EXAMPLES[selectedButton].code}
+              </code>
+            </pre>
+            </div>
+          }
         </section>
       </main>
     </div>
