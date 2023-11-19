@@ -1,4 +1,5 @@
- const CoreConcept = ({title, image, description}) => {
+import "./CoreConcept.css"
+const CoreConcept = ({title, image, description}) => {
   return (
     <li>
       <img src={image} alt={title}/>
